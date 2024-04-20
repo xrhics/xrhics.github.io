@@ -245,7 +245,7 @@
 
             <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Sat Apr 20 2024 22:53:28 GMT+0800">2024-04-20 22:53:28</span>
+                <span class="datetime" data-updated="Sat Apr 20 2024 23:00:04 GMT+0800">2024-04-20 23:00:04</span>
             </span>
         
 
@@ -271,7 +271,7 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>980 字</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>994 字</span>
             </span>
         
         
@@ -367,7 +367,7 @@
 <h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p>通过输入关键词，搜索相关博客。<br><img lazyload alt="image" data-src="/images/post/总结/搜索.png" width="100%" height style="margin: 0 auto;"></p>
 <h2 id="博客制作遇到的问题"><a href="#博客制作遇到的问题" class="headerlink" title="博客制作遇到的问题"></a>博客制作遇到的问题</h2><h4 id="问题1：本地页面正常，线上页面为初始状态"><a href="#问题1：本地页面正常，线上页面为初始状态" class="headerlink" title="问题1：本地页面正常，线上页面为初始状态"></a>问题1：本地页面正常，线上页面为初始状态</h4><p>经过排查，发现由于Github默认分支从master变成了main，导致部署 Hexo 到 GitHub Pages时出现问题。在部署时，需要定义branch为main。</p>
 <p><strong>解决方案</strong>：_config.yml里的URL为需要定义为xxx.github.io，默认分支改为main。</p>
-<h4 id="问题2：-内容更新后本地页面正常，但是线上生成的页面混乱。"><a href="#问题2：-内容更新后本地页面正常，但是线上生成的页面混乱。" class="headerlink" title="问题2： 内容更新后本地页面正常，但是线上生成的页面混乱。"></a>问题2： 内容更新后本地页面正常，但是线上生成的页面混乱。</h4><p>生成站点文件并推送至远程库时，由于远程端的站点文件没有清除，导致页面没有正常更新。<br><strong>解决方案</strong>：每次更新都需要hexo clean，第一次部署就需要把github的默认站点文件清除。</p>
+<h4 id="问题2：-内容更新后本地页面正常，但是线上生成的页面混乱。"><a href="#问题2：-内容更新后本地页面正常，但是线上生成的页面混乱。" class="headerlink" title="问题2： 内容更新后本地页面正常，但是线上生成的页面混乱。"></a>问题2： 内容更新后本地页面正常，但是线上生成的页面混乱。</h4><p>生成站点文件并推送至远程库时，由于远程端的站点文件没有清除，导致页面没有正常更新。<br><strong>解决方案</strong>：所有图片文件不要放在public目录下，每次更新都需要hexo clean，第一次部署就需要把github的默认站点文件清除。</p>
 <h4 id="问题3：-编辑文章时，图片不显示。"><a href="#问题3：-编辑文章时，图片不显示。" class="headerlink" title="问题3： 编辑文章时，图片不显示。"></a>问题3： 编辑文章时，图片不显示。</h4><p>用markdown编辑文章时，插入图片使用![](xxx.jpg)时，页面无法显示图片。</p>
 <p><strong>解决方案</strong>：安装hexo-renderer-marked</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-marked</span><br></pre></td></tr></table></figure>
