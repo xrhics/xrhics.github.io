@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Ronghui Xu">
+    
+    <title>
+        
+            MM-Path. Multi-modal, Multi-granularity Path Representation Learning |
+        
+        Ronghui Xu （徐榕荟）&#39;s Homepage
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/images/photo.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"xrhics.github.io","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#0066cc","title":"Ronghui Xu （徐榕荟）'s Homepage","author":"Ronghui Xu","avatar":"/images/photo.jpg","logo":"/images/photo.jpg","favicon":"/images/photo.jpg"},"menu":{"home":"/homepage","plogs":"/","archives":"/archives","tags":"/tags"},"first_screen":{"enable":false,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/xrhics","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"x":null,"facebook":null,"email":"xrhics@163.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":false},"home":{"announcement":null,"category":false,"tag":true,"post_datetime":"updated"},"post":{"author_badge":{"enable":false,"level_badge":false,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":true,"share":true,"reward":{"enable":true,"img_link":"/images/money.jpg","text":"给作者投喂小蛋糕~"}},"code_block":{"tools":{"enable":false,"style":"default"},"highlight_theme":"default"},"toc":{"enable":false,"number":false,"expand_all":false,"init_open":true,"layout":"right"},"website_count":{"busuanzi_count":{"enable":true,"site_uv":false,"site_pv":false,"page_pv":true}},"local_search":{"enable":true,"preload":true},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.39"},"waline":{"server_url":null,"reaction":false,"version":"3.3.2"},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":true},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2024,"word_count":false,"site_deploy":{"enable":true,"provider":"github","url":null},"record":{"enable":false,"list":[{"code":null,"link":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"mathjax":{"tags":"none","single_dollars":true,"cjk_width":0.9,"normal_width":0.6,"append_css":true,"every_page":false},"root":"","source_data":{},"version":"4.2.5"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
+  </script>
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
+    
+</div>
+
+
+
+<main class="page-container border-box">
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left flex-start border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/images/photo.jpg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Ronghui Xu （徐榕荟）&#39;s Homepage
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc border-box">
+                <ul class="menu-list border-box">
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/homepage">
+                                
+                                HOME
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/">
+                                
+                                PLOGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/archives">
+                                
+                                ARCHIVES
+                                
+                            </a>
+                            
+                        </li>
+                    
+                        
+                        <li class="menu-item flex-start border-box">
+                            <a class="menu-text-color border-box" href="/tags">
+                                
+                                TAGS
+                                
+                            </a>
+                            
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="menu-text-color fas search fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile border-box flex-start">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list border-box">
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/homepage">
+                            
+                            HOME
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/">
+                            
+                            PLOGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/archives">
+                            
+                            ARCHIVES
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+                
+                <li class="drawer-menu-item border-box not-sub-menu">
+                    <label class="drawer-menu-label border-box">
+                        <a class="drawer-menu-text-color left-side flex-start border-box" href="/tags">
+                            
+                            TAGS
+                        </a>
+                        
+                    </label>
+                    
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+                <div class="post-content-top border-box"
+                     style="height: 13.8rem"
+                >
+                    <div class="cover-post-title">
+                        MM-Path. Multi-modal, Multi-granularity Path Representation Learning
+                    </div>
+                    <img class="post-cover" src="/images/post/mm-path/framework.png"
+                         onerror="this.style.display='none'"
+                    >
+                </div>
+            
+
+            <div class="post-content-bottom border-box has-cover">
+                
+
+                
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/photo.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">Ronghui Xu</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
+
+        
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2025-01-03 20:57:44</span>
+            </span>
+
+            
+                <!-- <span class="meta-info-item post-update-date">
+                    <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                    <span class="datetime" data-updated="Sun Jan 05 2025 13:15:18 GMT+0800">2025-01-05 13:15:18</span>
+                </span> -->
+            
+        
+
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/">表征学习</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E8%B7%AF%E5%BE%84/">路径</a></li>
+                        
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.6k Words</span>
+            </span>
+        
+        
+        
+            <span class="meta-info-item post-pv">
+                <i class="icon fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+            </span>
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="post-content keep-markdown-body ">
+                    
+
+                    
+                         <p>在智能交通的各个领域中，开发有效的路径表征变得越来越重要。尽管预训练的路径表征学习模型表现出了不错的性能，但它们主要关注单模态数据的拓扑结构，如道路网络，而忽略了与路径图像（如遥感图像）相关的几何和上下文特征。整合来自多种模态的信息可以提供更全面的视角，提高表征精度和泛化能力。然而，信息粒度的差异阻碍了基于路网的路径（道路路径）和基于图像的路径（图像路径）的语义对齐，同时多模态数据的异构性也给有效融合和利用带来了巨大挑战。本文提出一种新的多模态、多粒度的路径表征学习框架（MM-Path），通过整合道路路径和图像路径这两种模态来学习通用的路径表征。为增强多模态数据的对齐，我们提出了一种多粒度对齐策略，系统地将节点、道路子路径和道路路径与其对应的图像块关联起来，确保详细的局部信息和更广泛的全局上下文的同步。为了有效解决多模态数据的异构性，我们提出了一种基于图的跨模态残差融合组件，旨在全面融合不同模态和粒度的信息。最后，在两个下游任务下的两个大规模真实数据集上进行了广泛的实验，验证了MM-Path的有效性。</p>
+<span id="more"></span>
+
+<p><strong>作者：</strong>  徐榕荟，成涵吟，郭晨娟，高洪帆，胡吉林，杨斌，杨彬</p>
+<p><strong>机构：</strong> 华东师范大学，重庆邮电大学</p>
+<p><strong>关键词：</strong> 路径表征学习， 多模态， 自监督学习</p>
+<p><strong>论文链接：</strong> <a class="link"   target="_blank" rel="noopener" href="https://arxiv.org/abs/2411.18428" >https://arxiv.org/abs/2411.18428<i class="fas fa-external-link-alt"></i></a></p>
+<p><strong>代码链接：</strong> <a class="link"   target="_blank" rel="noopener" href="https://github.com/decisionintelligence/MM-Path" >https://github.com/decisionintelligence/MM-Path<i class="fas fa-external-link-alt"></i></a></p>
+<img    
+                       lazyload
+                       alt="image"
+                       data-src="/images/post/mm-path/title.png"
+                         style="margin: 0 auto;"
+                 >
+
+<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>在智能导航、城市规划以及城市应急管理等领域，理解路径并开发有效的路径表示变得日益重要。路径表征可以广泛应用于路径旅行时间估计、路径推荐以及公共交通系统的布局分析与优化等方面。近年来，许多研究工作致力于构建预训练路径表征学习模型，这些模型展现了出色的泛化能力。在现实世界中，路径存在于多种模态中，它们提供了更为丰富和多样的信息。例如，从道路网络中提取的路径（简称“道路路径”）揭示了道路段之间的拓扑关系；而遥感图像中的路径（简称“图像路径”）则从几何特征及更广泛的环境上下文中提供了新的视角（如图1 所示）。通过整合这些不同的模态信息，我们能够从多角度丰富路径的表征，进而提升模型的准确性和泛化性。然而，目前的路径表征学习模型主要依赖于来自道路网络的单一模态数据，尚未充分捕获对于全面理解路径至关重要的深层次、全面的上下文信息。因此，开发一个能够整合多模态数据的预训练路径表征学习模型显得尤为必要。</p>
+<img    
+                       lazyload
+                       alt="image"
+                       data-src="/images/post/mm-path/intro.jpg"
+                         style="margin: 0 auto;"
+                 >
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图1：一条路径的不同模态</center>
+
+<h2 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h2><p>构建这样一个预训练多模态路径表征学习模型时，主要面临了两个挑战：</p>
+<p><strong>（1）道路路径和图像路径之间的信息粒度差异严重阻碍了跨模态语义对齐。</strong> 如图1所示，道路路径通常侧重于详细的拓扑结构并描绘道路连通性，而图像路径则提供了更广阔的全局环境上下文，反映了相应区域的功能属性。需要指出的是，图像中可能包含大量与道路路径相关性较低的区域，如图1(c) 中的深色区域。现有的图像-文本多模态模型通常采用单图像与文本序列对齐的方式，这种单一的粗粒度对齐方法可能引入噪声，不足以满足路径表征的精细对齐需求。</p>
+<p><strong>（2）道路路径和图像路径固有的异质性对特征融合构成巨大挑战。</strong> 道路路径和图像路径在学习方法上的差异巨大，导致它们被映射到不同的嵌入空间，使得具有相似语义的特征维度包含完全不同的信息。简单的融合策略可能会导致信息丢失或偏差增加，且难以捕捉道路路径和图像路径之间的微妙相关性。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>为应对这些挑战，我们提出一种多模态、多粒度的路径表征学习框架MM-Path，用于学习通用路径表征。图2 展示了MM-Path的总体框架。MM-Path包含了两个关键组件：多粒度对齐（Multi-granularity Alignment）组件和基于图的跨模态残差融合（Graph-based Cross-modal Residual Fusion）组件。</p>
+<img    
+                       lazyload
+                       alt="image"
+                       data-src="/images/post/mm-path/framework.png"
+                         style="margin: 0 auto;"
+                 >
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图2：MM-Path的总体框架</center>
+
+<p><strong>多粒度对齐组件</strong>系统地将路口、子路径和整个道路路径与其对应的图像信息关联起来，以更精细的粒度准确捕捉细节，并在更粗的粒度上保持全局对应。 具体来说，我们将整个感兴趣区域的图像划分为固定尺寸的小图像，沿着每条路径收集固定尺寸的小图像，并将收集的图像排列在一个图像路径（即图像序列）中。然后，我们采用模态特定的tokenizers分别为道路路径和图像路径生成初始嵌入。随后，这些初始嵌入被输入到Transformer架构中，在三种粒度上学习每种模态的复杂编码嵌入。最后，采用多粒度对齐损失函数确保不同粒度下道路和图像编码的嵌入对齐。</p>
+<p><strong>基于图的跨模态残差融合组件</strong>旨在在融合空间上下文信息的同时有效融合跨模态特征。我们将每个模态的编码嵌入与另一个模态的初始嵌入拼接起来，分别创建道路和图像残差嵌入，以融合不同阶段的跨模态特征。然后，基于空间对应关系和上下文信息为每条路径构建跨模态邻接矩阵。该矩阵利用GCN迭代地分别融合两种残差嵌入，从而获得道路和图像融合嵌入。最后应用对比损失来确保两种模态融合嵌入的一致性。最后，我们将这两个融合的嵌入连接起来，得到一个通用的路径表征。由于最终表征有效地融合了两模态的跨阶段特征和空间上下文信息，因此该组件不仅实现了深度的多模态融合，而且增强了信息的综合利用。</p>
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><h3 id="整体表现"><a href="#整体表现" class="headerlink" title="整体表现"></a>整体表现</h3><p>表 1 展示了两项任务——旅行时间估计和路径排序的整体性能表现。我们使用“$\uparrow$”（越大越好）和“$\downarrow$”（越小越好）来标记数值的优劣。在每项任务中，我们通过粗体和下划线来分别突出最佳和次佳的表现。此外，“Improvement”和“Improvement*”两行分别量化了MM-Path模型相较于最佳单模态和多模态基线模型的性能提升。MM-Path在两个数据集上的表现都优于所有基线，显示了它的优越性。</p>
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">表1：旅行时间估计和路径排序的整体准确性</center>
+<img    
+                       lazyload
+                       alt="image"
+                       data-src="/images/post/mm-path/tab1.png"
+                         style="margin: 0 auto;"
+                 >
+
+
+<h3 id="示例分析"><a href="#示例分析" class="headerlink" title="示例分析"></a>示例分析</h3><p>我们考察了奥尔堡的一对具有代表性的路径，以证明MM-Path的优越性。道路路径和图像路径如图 3 所示。</p>
+<img    
+                       lazyload
+                       alt="image"
+                       data-src="/images/post/mm-path/case1.png"
+                         style="margin: 0 auto;"
+                 >
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">图 3：两条路径的可视化</center>
+
+<p>图 3 中的两条路径在路网中表现出相似的结构，都具有$\langle 3, 2, 3, 3, 3\rangle$的节点度序列。这种单模态数据可能暗示两条路径的旅行时间接近。然而，从它们的图像信息来看，两者存在显著差异。例如，路径1通过一个环形交叉口并沿主干道行驶，通常这样的路径允许较快的行驶速度。而路径2则位于住宅区附近的普通道路，行驶速度通常较慢。</p>
+<p>表 2 报告了不同模型对这两条路径估计的旅行时间。模型TrajCL， START 和START+image预测路径2的旅行时间短于路径1，与实际情况相悖。 这表明，单一模态数据的信息可能有限，而且简单地将多模态数据拼接在一起，如START+image模型，未能有效地利用图像信息。相比之下，虽然多模态模型 JGRM 的结果与实际旅行时间的相对差异保持一致，但估计值仍有较大偏差。MM-Path 模型则显示出较好的旅行时间估计性能，表明它能有效整合并利用图像信息，从而提供更准确的预测。</p>
+<center style="font-size:14px;color:#C0C0C0;text-decoration:underline">表2：不同模型的旅行时间估计结果</center>
+<img    
+                       lazyload
+                       alt="image"
+                       data-src="/images/post/mm-path/tab4.png"
+                         style="margin: 0 auto;"
+                 >
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>本文介绍了一种多模态多粒度路径表征学习框架MM-Path。这是首次尝试将道路网络和图像数据融合于通用的路径表征学习中。首先，框架对道路路径和图像路径分别进行建模，实施多粒度对齐策略，确保精细的局部信息与广泛的全局上下文能够同步。此外，我们开发了一种基于图的跨模态残差融合组件，它能有效整合来自两种模态的信息，同时保持模态间的语义一致性。在两个真实数据集上进行的下游任务测试中，MM-Path超越了所有基线模型，展现了其卓越的性能。</p>
+
+                    
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                MM-Path. Multi-modal, Multi-granularity Path Representation Learning
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                2025/01/03/MM-PATH/
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    Author
+                </div>
+                <div class="content">Ronghui Xu</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    Published
+                </div>
+                <div class="content">2025-01-03 20:57</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    License
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed" target="_blank">
+                        
+                            <i class="fa-brands fa-creative-commons"></i>
+                            <i class="fa-brands fa-creative-commons-by"></i>
+                            <i class="fa-brands fa-creative-commons-nc"></i>
+                            <i class="fa-brands fa-creative-commons-sa"></i>
+                        
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E8%A1%A8%E5%BE%81%E5%AD%A6%E4%B9%A0/">表征学习</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E8%B7%AF%E5%BE%84/">路径</a>
+                                    </li>
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/%E5%A4%9A%E6%A8%A1%E6%80%81/">多模态</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                            <div class="post-share-container border-box">
+    <ul class="share-list-wrap border-box">
+        <li class="qq share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to QQ"
+        >
+            <i class="fa-brands fa-qq"></i>
+        </li>
+        <li class="wechat share-item border-box flex-center tooltip tooltip-img"
+            data-tooltip-content="Share to WeChat"
+            data-tooltip-img-tip="Scan by WeChat"
+            data-tooltip-img-style="background-color: #fff; top: -10px; padding: 0.6rem 0.6rem 0.1rem 0.6rem;"
+        >
+            <i class="fa-brands fa-weixin"></i>
+        </li>
+        <li class="weibo share-item border-box flex-center tooltip"
+            data-tooltip-content="Share to WeiBo"
+        >
+            <i class="fa-brands fa-weibo"></i>
+        </li>
+    </ul>
+</div>
+
+                        
+                    </div>
+                </div>
+
+                
+                    
+
+<div class="reward-author-container border-box flex-center">
+    <div class="reward-btn border-box flex-center tooltip tooltip-img"
+            data-tooltip-img-url="/images/money.jpg"
+            data-tooltip-img-trigger="click"
+            data-tooltip-img-style="top: -6px;"
+    >
+        <i class="fa-solid fa-gift"></i>&nbsp;给作者投喂小蛋糕~
+    </div>
+</div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/2024/04/20/SARL/"
+                                   title="A Spatial and Adversarial Representation Learning Approach for Predicting Land Use of Zones with POIs"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">A Spatial and Adversarial Representation Learning Approach for Predicting Land Use of Zones with POIs</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="copyright-info info-item">
+    &copy;&nbsp;<span>2024</span>&nbsp;-&nbsp;2025
+    
+            &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Ronghui Xu</a>
+        
+    </div>
+
+    <div class="theme-info info-item">
+        Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+    </div>
+
+    
+        
+        <div class="deploy-info info-item">
+            
+            This site is deployed on <span class="tooltip" data-tooltip-content="GitHub Pages"><img src="/images/brands/github.png"></span>
+            
+        </div>
+    
+
+    
+
+    
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="post-tools-list border-box">
+        <!-- PC encrypt again -->
+        
+
+        <!-- PC TOC show toggle -->
+        
+
+        <!-- PC go comment -->
+        
+
+        <!-- PC full screen -->
+        <li class="tools-item flex-center full-screen">
+            <i class="fa-solid fa-expand"></i>
+        </li>
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <!-- toggle mode -->
+        
+            <li class="tools-item tool-toggle-theme-mode flex-center">
+                <i class="fas fa-moon"></i>
+            </li>
+        
+
+        <!-- rss -->
+        
+
+        <!-- to bottom -->
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="close-popup-btn">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+    <!-- tablet toc -->
+    
+</main>
+
+
+
+
+
+<!-- common js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/anime.min.js"></script>
+
+<!-- local search -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/local-search.min.js"></script>
+
+
+<!-- lazyload -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/lazyload.min.js"></script>
+
+
+<div class="pjax">
+    <!-- home page -->
+    
+
+    <!-- post page -->
+    
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+
+        <!-- copyright-info -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/copyright-info.min.js"></script>
+        
+
+        <!-- share -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/post/share.min.js"></script>
+        
+    
+
+    <!-- categories page -->
+    
+
+    <!-- links page -->
+    
+
+    <!-- photos page -->
+    
+
+    <!-- tools page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.2.5/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart()
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
